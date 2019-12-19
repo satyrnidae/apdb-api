@@ -58,7 +58,7 @@ jspm_packages/
 .next
 
 # built files
-bin/
+dist/
 
 # local configuration
 config/config.json
