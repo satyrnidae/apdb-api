@@ -1,1 +1,1 @@
-*: @satyrnidae
+* @satyrnidae
