@@ -62,3 +62,6 @@ config/config.json
 
 # SQLite3 Database
 *.db
+
+# Release files
+release/
