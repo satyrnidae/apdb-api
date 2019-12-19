@@ -57,9 +57,6 @@ jspm_packages/
 # next.js build output
 .next
 
-# built files
-dist/
-
 # local configuration
 config/config.json
 
