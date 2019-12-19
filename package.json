@@ -1,0 +1,24 @@
+{
+  "name": "apdb-api",
+  "version": "1.0.0",
+  "description": "API layer for the 'Another Pluggable Discord Bot' project",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satyrnidae/apdb-api.git"
+  },
+  "keywords": [
+    "api",
+    "discord",
+    "bot"
+  ],
+  "author": "Isabel Maskrey (satyrnidae)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/satyrnidae/apdb-api/issues"
+  },
+  "homepage": "https://github.com/satyrnidae/apdb-api#readme"
+}
