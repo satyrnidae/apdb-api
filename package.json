@@ -47,7 +47,9 @@
     "node-opus": "^0.2.7",
     "opusscript": "0.0.6",
     "sodium": "github:general-programming/node-sodium",
+    "ts-node": "^8.5.4",
     "typeorm": "0.2.21",
+    "typescript": "^3.7.3",
     "xmlhttprequest": "1.8.0",
     "yargs-parser": "13.1.1"
   }
