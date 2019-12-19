@@ -1,5 +1,5 @@
 {
-  "name": "apdb-api",
+  "name": "@satyrnidae/apdb-api",
   "version": "1.0.0-alpha",
   "description": "API layer for the 'Another Pluggable Discord Bot' project",
   "main": "src/index.ts",
