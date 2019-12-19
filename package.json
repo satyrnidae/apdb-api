@@ -1,6 +1,6 @@
 {
   "name": "@satyrnidae/apdb-api",
-  "version": "1.0.0-alpha",
+  "version": "1.0.1-alpha",
   "description": "API layer for the 'Another Pluggable Discord Bot' project",
   "main": "src/index.ts",
   "scripts": {
@@ -15,8 +15,15 @@
     "discord",
     "bot"
   ],
-  "author": "Isabel Maskrey (satyrnidae)",
+  "author": {
+    "name": "Isabel Maskrey",
+    "email": "isabel@satyrn.dev",
+    "url": "https://github.com/satyrnidae"
+  },
   "license": "MIT",
+  "bundledDependencies": [
+    "reflect-metadata"
+  ],
   "bugs": {
     "url": "https://github.com/satyrnidae/apdb-api/issues"
   },
