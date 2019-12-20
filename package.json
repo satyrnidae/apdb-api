@@ -37,11 +37,11 @@
   "peerDependencies": {
     "@types/node": "^12.12.21",
     "discord.js": "^11.5.1",
-    "typeorm": "^0.2.21",
-    "yargs-parser": "^13.1.1",
-    "xmlhttprequest": "^1.8.0",
     "inversify": "^5.0.1",
-    "inversify-inject-decorators": "^3.1.0"
+    "inversify-inject-decorators": "^3.1.0",
+    "typeorm": "^0.2.21",
+    "xmlhttprequest": "^1.8.0",
+    "yargs-parser": "^13.1.1"
   },
   "devDependencies": {
     "@discordjs/uws": "^10.149.0",
@@ -53,6 +53,7 @@
     "inversify": "5.0.1",
     "inversify-inject-decorators": "3.1.0",
     "libsodium-wrappers": "^0.7.3",
+    "node": "^10.18.0",
     "node-gyp-build": "^4.2.0",
     "node-opus": "^0.2.7",
     "opusscript": "0.0.6",
