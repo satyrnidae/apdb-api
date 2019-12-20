@@ -24,13 +24,6 @@ These dependencies are provided by the Another Pluggable Discord Bot core applic
 
 ## Developing the API
 
-### Pre-Requisites
-
-- Node.js v10.15 or higher
-  - Current LTS release is preferable
-- TypeScript 3.7.5+
-- Recommended editor is Visual Studio Code, but this is not a hard requirement
-
 ### Setting Up
 
 To set up the development environment:
