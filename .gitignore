@@ -65,3 +65,4 @@ config/config.json
 
 # Release files
 release/
+dist/
