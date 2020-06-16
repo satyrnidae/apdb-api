@@ -64,5 +64,4 @@ config/config.json
 *.db
 
 # Release files
-release/
-dist/
+dist
