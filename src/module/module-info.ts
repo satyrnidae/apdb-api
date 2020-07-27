@@ -22,5 +22,10 @@ export interface IModuleInfo {
   /**
    * Additional details about the module
    */
-  details: IModuleDetails
+  details: IModuleDetails;
+
+  /**
+   * Full file path of the module
+   */
+  path: string;
 }
