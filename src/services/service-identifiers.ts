@@ -28,6 +28,11 @@ const ServiceIdentifiers = {
     Event: Symbol.for('apdb-api/event-service'),
 
     /**
+     * Symbol for the logging service
+     */
+    Logging: Symbol.for('apdb-api/logging-service'),
+
+    /**
      * Symbol for the module service
      */
     Module: Symbol.for('apdb-api/module-service')

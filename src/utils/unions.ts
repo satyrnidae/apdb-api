@@ -1,8 +1,10 @@
+import { OneOrMany } from "./types";
+
 /**
  * Converts a union of a single object and an array of that object to an array
  * @param union The union array.
  */
-export function unionToArray<T>(union: UnionArray<T>): T[] {
+export function toMany<T>(union: OneOrMany<T>): T[] {
     if(union instanceof Array) {
         return union;
     }
@@ -14,7 +16,7 @@ export function unionToArray<T>(union: UnionArray<T>): T[] {
  * @param union The union array.
  * @returns The single element, or undefined if multiple elements are present.
  */
-export function unionToInstance<T>(union: UnionArray<T>): T | undefined {
+export function toOne<T>(union: OneOrMany<T>): T | undefined {
     if(union instanceof Array) {
         if(union.length === 1) {
             return union[0];
@@ -28,6 +30,6 @@ export function unionToInstance<T>(union: UnionArray<T>): T | undefined {
  * Converts an array to null if empty, the single entry if length is one, or returns the array.
  * @param array The array to convert
  */
-export function arrayToUnion<T>(array: T[]): UnionArray<T> | null {
+export function toOneOrMany<T>(array: T[]): OneOrMany<T> | null {
     return array.length === 0 ? null : array.length === 1 ? array[0] : array;
 }

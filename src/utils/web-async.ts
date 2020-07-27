@@ -1,4 +1,5 @@
 import { XMLHttpRequest } from 'xmlhttprequest';
+import { Resolve, Reject } from './types';
 
 const DEFAULT_REQUEST_TIMEOUT = 500;
 const HTTP_STATUS_SUCCESS = 200;

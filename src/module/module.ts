@@ -1,11 +1,12 @@
 import { Command } from './command';
 import { EventHandler } from './event-handler';
 import { ModuleInfo } from './module-info';
+import { Initializeable } from '../utils';
 
 /**
  * The base class for a module implementation.
  */
-export abstract class Module {
+export abstract class Module implements Initializeable {
     /**
      * A list of commands which are provided by this module.
      */
@@ -21,23 +22,14 @@ export abstract class Module {
      */
     constructor(public readonly moduleInfo: ModuleInfo) { }
 
+    public abstract async preInitialize() : Promise<void>;
+
+    public abstract async initialize() : Promise<void>;
+
+    public abstract async postInitialize() : Promise<void>;
+
     /**
      * Registers any dependencies to the IOC container
      */
-    async registerDependencies(): Promise<void> { }
-
-    /**
-     * Pre-initialization stage for the module.
-     */
-    async preInitialize(): Promise<void> { }
-
-    /**
-     * Initialization stage for the module.
-     */
-    async initialize(): Promise<void> { }
-
-    /**
-     * Post-initialization stage for the module.
-     */
-    async postInitialize(): Promise<void> { }
+    public abstract async registerDependencies(): Promise<void>;
 }

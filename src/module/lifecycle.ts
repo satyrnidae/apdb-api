@@ -1,24 +1,12 @@
+import { Initializeable } from "../utils";
+
 /**
  * Main app lifecycle interface
  */
-export interface Lifecycle {
-    /**
-     * The pre-initialization stage
-     */
-    preInitialize(): Promise<void>;
-
-    /**
-     * The initialization stage
-     */
-    initialize(): Promise<void>;
-
-    /**
-     * The post-initialization stage
-     */
-    postInitialize(): Promise<void>;
+export interface Lifecycle extends Initializeable {
 
     /**
      * The main run method
      */
-    run(): Promise<void>;
+    run(): Promise<any>;
 }

@@ -1,4 +1,5 @@
 import * as fs from 'fs';
+import { ReadFileOptions, Resolve, Reject, ReadDirOptions } from './types';
 
 /**
  * Contains utility functions for promisified file system access
@@ -26,7 +27,7 @@ export namespace FsAsync {
      * @param path The path of the directory to list
      * @param options Read options for the directory
      */
-    export async function readDirAsync(path: fs.PathLike, options?: ReadDirOptions): Promise<string[]> {
+    export async function readdirAsync(path: fs.PathLike, options?: ReadDirOptions): Promise<string[]> {
         return new Promise<string[]>((resolve: Resolve<string[]>, reject: Reject) => {
             fs.readdir(path, options, (err: NodeJS.ErrnoException, files: string[]) => {
                 if (err) {

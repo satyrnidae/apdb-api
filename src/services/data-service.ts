@@ -1,4 +1,5 @@
 import { Repository } from 'typeorm';
+import { RepositoryTarget } from '../utils';
 
 /**
  * A service which provides access to the data source.

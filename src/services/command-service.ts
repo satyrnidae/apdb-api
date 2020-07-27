@@ -1,5 +1,6 @@
 import { Guild } from 'discord.js';
 import { Command } from '../module';
+import { OneOrMany } from '../utils';
 
 /**
  * A service which maintains references to all registered commands.
@@ -17,13 +18,13 @@ export interface CommandService {
      * @param command The expected command string
      * @param moduleId Optionally, the specific module to pull the command from.
      */
-    get(command: string, moduleId?: string): UnionArray<Command>;
+    get(command: string, moduleId?: string): OneOrMany<Command>;
 
     /**
      * Gets all the commands from the list, optionally filtering by module.
      * @param moduleId Optionally, the module ID by which to filter the commands.
      */
-    getAll(moduleId?: string): UnionArray<Command>;
+    getAll(moduleId?: string): OneOrMany<Command>;
 
     /**
      * Gets the prefix for a specific guild.

@@ -1,39 +1,15 @@
 import { Module } from '../module';
+import { Initializeable, OneOrMany } from '../utils';
 
 /**
  * A service which provides access to all loaded modules
  */
-export interface ModuleService {
-
-    /**
-     * Loads all compiled modules in the modules directory
-     */
-    loadModules(): Promise<void>;
-
-    /**
-     * Registers dependencies to the IOC container for all modules
-     */
-    registerDependencies(): Promise<void>;
-
-    /**
-     * Fires the pre-initialization stage for all modules
-     */
-    preInitializeModules(): Promise<void>;
-
-    /**
-     * Fires the initialization stage for all modules
-     */
-    initializeModules(): Promise<void>;
-
-    /**
-     * Fires the post-initialization stage for all modules
-     */
-    postInitializeModules(): Promise<void>;
+export interface ModuleService extends Initializeable {
 
     /**
      * Gets a list of all loaded modules.
      */
-    getAllModules(): UnionArray<Module>;
+    getAllModules(): OneOrMany<Module>;
 
     /**
      * Gets a single module by ID
@@ -45,11 +21,11 @@ export interface ModuleService {
      * Gets a module or modules by name.
      * @param moduleName The module name to search for.
      */
-    getModulesByName(moduleName: string): UnionArray<Module>;
+    getModulesByName(moduleName: string): OneOrMany<Module>;
 
     /**
      * Gets a module or modules by name or ID.
      * @param moduleIdOrName The module ID or module name to search for.
      */
-    getModulesByIdOrName(moduleIdOrName: string): UnionArray<Module>;
+    getModulesByIdOrName(moduleIdOrName: string): OneOrMany<Module>;
 }
