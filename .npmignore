@@ -1,0 +1,9 @@
+.github
+.vscode
+
+node_modules
+docs
+src
+
+package_scripts.js
+tsconfig.json

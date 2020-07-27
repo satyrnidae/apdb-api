@@ -57,6 +57,7 @@
     "node": "^10.18.0",
     "node-gyp-build": "^4.2.0",
     "node-opus": "^0.2.7",
+    "nps": "^5.10.0",
     "opusscript": "0.0.6",
     "sodium": "github:general-programming/node-sodium",
     "ts-node": "^8.5.4",
