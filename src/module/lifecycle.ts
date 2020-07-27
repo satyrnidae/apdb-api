@@ -1,12 +1,12 @@
-import { Initializeable } from "../utils";
+import { IInitializeable } from "../utils";
 
 /**
  * Main app lifecycle interface
  */
-export interface Lifecycle extends Initializeable {
+export interface ILifecycle extends IInitializeable {
 
-    /**
-     * The main run method
-     */
-    run(): Promise<any>;
+  /**
+   * The main run method
+   */
+  run(): Promise<any>;
 }

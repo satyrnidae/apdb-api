@@ -17,3 +17,5 @@ export type RepositoryTarget<T> = string | Function | (new () => T) | import('ty
 export type Resolve<T> = (value?: T | PromiseLike<T>) => void;
 
 export type OneOrMany<T> = T | T[];
+
+export type LogLevel = 'trace' | 'debug' | 'info' | 'warn' | 'error';

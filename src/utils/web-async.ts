@@ -12,21 +12,21 @@ const HTTP_STATUS_MULTIPLE_CHOICES = 300;
  * @param timeout Optionally, the timeout for request execution, in milliseconds. Defaults to 500.
  */
 export function getHttpResponse(method: string, url: string, timeout: number = DEFAULT_REQUEST_TIMEOUT): Promise<XMLHttpRequest> {
-    return new Promise<XMLHttpRequest>((resolve: Resolve<XMLHttpRequest>, reject: Reject) => {
-        const xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.timeout = timeout;
-        xhr.open(method, url);
-        xhr.onreadystatechange = () => {
-            if(xhr.readyState === xhr.DONE) {
-                if(xhr.status >= HTTP_STATUS_SUCCESS && xhr.status < HTTP_STATUS_MULTIPLE_CHOICES) {
-                    resolve(xhr);
-                }
-                else {
-                    reject(xhr.statusText);
-                }
-            }
-        };
-        xhr.onerror = () => reject(xhr.statusText);
-        xhr.send();
-    });
+  return new Promise<XMLHttpRequest>((resolve: Resolve<XMLHttpRequest>, reject: Reject) => {
+    const xhr: XMLHttpRequest = new XMLHttpRequest();
+    xhr.timeout = timeout;
+    xhr.open(method, url);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === xhr.DONE) {
+        if (xhr.status >= HTTP_STATUS_SUCCESS && xhr.status < HTTP_STATUS_MULTIPLE_CHOICES) {
+          resolve(xhr);
+        }
+        else {
+          reject(xhr.statusText);
+        }
+      }
+    };
+    xhr.onerror = () => reject(xhr.statusText);
+    xhr.send();
+  });
 }

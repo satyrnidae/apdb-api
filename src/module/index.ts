@@ -1,3 +1,4 @@
+export * from './logger';
 export * from './app-configuration';
 export * from './command';
 export * from './event-handler';

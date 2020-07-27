@@ -2,28 +2,28 @@ import { OneOrMany } from "./types";
 
 /**
  * Converts a union of a single object and an array of that object to an array
- * @param union The union array.
+ * @param oneOrMany The union array.
  */
-export function toMany<T>(union: OneOrMany<T>): T[] {
-    if(union instanceof Array) {
-        return union;
-    }
-    return new Array(union);
+export function toMany<T>(oneOrMany: OneOrMany<T>): T[] {
+  if (oneOrMany instanceof Array) {
+    return oneOrMany;
+  }
+  return new Array(oneOrMany);
 }
 
 /**
  * Convers a union of a single object and an array to a single instance of the object
- * @param union The union array.
+ * @param oneOrMany The union array.
  * @returns The single element, or undefined if multiple elements are present.
  */
-export function toOne<T>(union: OneOrMany<T>): T | undefined {
-    if(union instanceof Array) {
-        if(union.length === 1) {
-            return union[0];
-        }
-        return undefined;
+export function toOne<T>(oneOrMany: OneOrMany<T>): T | undefined {
+  if (oneOrMany instanceof Array) {
+    if (oneOrMany.length === 1) {
+      return oneOrMany[0];
     }
-    return union;
+    return undefined;
+  }
+  return oneOrMany;
 }
 
 /**
@@ -31,5 +31,5 @@ export function toOne<T>(union: OneOrMany<T>): T | undefined {
  * @param array The array to convert
  */
 export function toOneOrMany<T>(array: T[]): OneOrMany<T> | null {
-    return array.length === 0 ? null : array.length === 1 ? array[0] : array;
+  return array.length === 0 ? null : array.length === 1 ? array[0] : array;
 }
