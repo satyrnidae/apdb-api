@@ -26,4 +26,10 @@ export interface IModuleDetails {
    * The website for the module.
    */
   website: string;
+
+  /**
+   * Full file path of the module
+   */
+  path: string;
+
 }
