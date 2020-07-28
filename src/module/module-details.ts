@@ -32,4 +32,5 @@ export interface IModuleDetails {
    */
   path: string;
 
+  containerName: string;
 }
