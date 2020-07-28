@@ -19,13 +19,18 @@ export interface IModuleInfo {
    */
   id: string;
 
+    /**
+   * Full file path of the module
+   */
+  main: string;
+
+    /**
+   * Full file path of the module
+   */
+  path: string;
+
   /**
    * Additional details about the module
    */
   details: IModuleDetails;
-
-  /**
-   * Full file path of the module
-   */
-  path: string;
 }
