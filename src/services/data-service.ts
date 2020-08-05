@@ -1,5 +1,5 @@
 import { Repository } from 'typeorm';
-import { RepositoryTarget } from '../utils';
+import { RepositoryTarget } from '@satyrnidae/apdb-utils';
 
 /**
  * A service which provides access to the data source.

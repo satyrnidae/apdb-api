@@ -1,5 +1,5 @@
 import { EventHandler } from '../module';
-import { EventHandlerFunction } from '../utils';
+import { EventHandlerFunction } from '@satyrnidae/apdb-utils';
 
 /**
  * A service which allows event handlers to be registered to the client.

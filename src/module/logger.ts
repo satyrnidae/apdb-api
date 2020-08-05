@@ -1,4 +1,4 @@
-import { LogLevel } from "../utils";
+import { LogLevel } from '@satyrnidae/apdb-utils';
 
 export class Logger {
   constructor(private identifier: string,

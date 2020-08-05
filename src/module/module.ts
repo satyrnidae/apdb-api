@@ -2,7 +2,7 @@ import { Command } from './command';
 import { EventHandler } from './event-handler';
 import { IModuleInfo } from './module-info';
 import { Logger } from './logger';
-import { IInitializeable } from '../utils';
+import { IInitializeable } from '@satyrnidae/apdb-utils';
 import { injectable } from 'inversify';
 
 /**

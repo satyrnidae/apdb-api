@@ -1,6 +1,6 @@
 import { Guild } from 'discord.js';
 import { Command } from '../module';
-import { OneOrMany } from '../utils';
+import { OneOrMany } from '@satyrnidae/apdb-utils';
 
 /**
  * A service which maintains references to all registered commands.

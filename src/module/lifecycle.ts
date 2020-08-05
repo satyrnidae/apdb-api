@@ -1,4 +1,4 @@
-import { IInitializeable } from "../utils";
+import { IInitializeable } from '@satyrnidae/apdb-utils';
 
 /**
  * Main app lifecycle interface

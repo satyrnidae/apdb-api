@@ -1,5 +1,5 @@
 import { Module } from '../module';
-import { IInitializeable, OneOrMany } from '../utils';
+import { IInitializeable, OneOrMany } from '@satyrnidae/apdb-utils';
 
 /**
  * A service which provides access to all loaded modules
