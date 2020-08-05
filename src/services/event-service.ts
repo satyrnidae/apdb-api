@@ -9,19 +9,19 @@ export interface IEventService {
    * Registers a new event handler to the client instance.
    * @param event The event handler to register.
    */
-  registerEvent(event: EventHandler): Promise<void>;
+  registerEvent(event: EventHandler): void;
 
   /**
    * Adds a new listener function to the client instance
    * @param event The event to handle
    * @param listener The event handler function
    */
-  addListener(event: string, listener: EventHandlerFunction): Promise<void>;
+  addListener(event: string, listener: EventHandlerFunction): void;
 
   /**
    * Sets the event executor on an event on the client instance
    * @param event The event to handle
    * @param listener The event handler function
    */
-  on(event: string, listener: Function): Promise<void>;
+  on(event: string, listener: Function): void;
 }

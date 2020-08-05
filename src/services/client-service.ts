@@ -12,5 +12,5 @@ export interface IClientService {
   /**
    * Returns the client instance.
    */
-  getClient(): Promise<Client>;
+  getClient(): Client;
 }
