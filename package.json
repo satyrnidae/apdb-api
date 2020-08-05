@@ -32,7 +32,7 @@
     "reflect-metadata": "^0.1.13"
   },
   "peerDependencies": {
-    "@satyrnidae/apdb-utils": "^0.0.2",
+    "@satyrnidae/apdb-utils": "^0.0.3",
     "discord.js": "^11.5.1",
     "inversify": "^5.0.1",
     "inversify-inject-decorators": "^3.1.0",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@discordjs/uws": "^10.149.0",
-    "@satyrnidae/apdb-utils": "0.0.2",
+    "@satyrnidae/apdb-utils": "0.0.3",
     "@types/node": "^12.12.21",
     "@types/yargs-parser": "^13.1.0",
     "bufferutil": "^4.0.0",
