@@ -14,7 +14,5 @@ export interface IDataEntityFactory<T extends DataEntity> {
    */
   load(args: Partial<T>, save?: boolean): Promise<OneOrMany<T>>;
 
-  find(args: FindConditions<T>): Promise<OneOrMany<T>>;
-
   getRepository(): Promise<Repository<T>>;
 }
