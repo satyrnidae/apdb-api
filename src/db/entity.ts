@@ -11,7 +11,7 @@ export abstract class DataEntity {
    */
   public abstract save(): Promise<this & DataEntity>;
 
-  protected abstract getRepository(): Promise<Repository<this & DataEntity>>;
+  protected abstract getRepository(): Promise<Repository<DataEntity>>;
 
   /**
    * The date at which the entity was initially created in the data source.
