@@ -6,8 +6,9 @@ import { DataEntity } from './entity';
 export interface IDataEntityFactory<T extends DataEntity> {
   /**
    * Loads the data entity from the data source using the provided arguments.
-   * @param args The arguments to query the database.  These are defined at the implementation level.
+   * @param args The arguments to query the database, as a partial of the data entity
+   * @param save Optional argument, specifies whether or not new objects should be auto-saved.
    * @returns A promise which resolves to an instance of the data entity type.
    */
-  load(args: Partial<T>): Promise<T>;
+  load(args: Partial<T>, save?: boolean): Promise<T>;
 }
