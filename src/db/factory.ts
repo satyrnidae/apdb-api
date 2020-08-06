@@ -9,5 +9,5 @@ export interface IDataEntityFactory<T extends DataEntity> {
    * @param args The arguments to query the database.  These are defined at the implementation level.
    * @returns A promise which resolves to an instance of the data entity type.
    */
-  load(...args: any[]): Promise<T>;
+  load(args: Partial<T>): Promise<T>;
 }
