@@ -1,5 +1,10 @@
 import { Repository } from 'typeorm';
 import { RepositoryTarget } from '@satyrnidae/apdb-utils';
+import { DataEntity, IDataEntityFactory } from '../db';
+
+export type FactoryRegistry = {
+  [name: string]: (new () => IDataEntityFactory<any>);
+}
 
 /**
  * A service which provides access to the data source.
@@ -9,5 +14,10 @@ export interface IDataService {
    * Gets a new repository instance for a specific target.
    * @param target The target for which the repository is resolved.
    */
-  getRepository<T>(target: RepositoryTarget<T>): Promise<Repository<T>>;
+  getRepository<T extends DataEntity>(target: RepositoryTarget<T>): Promise<Repository<T>>;
+
+  registerFactory<T extends DataEntity>(entity: (new () => T), factory: (new () => IDataEntityFactory<T>)): Promise<void>;
+
+  getFactory<T extends DataEntity>(entity: (new () => T)): Promise<IDataEntityFactory<T>>;
+
 }

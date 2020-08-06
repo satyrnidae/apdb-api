@@ -1,4 +1,5 @@
 import { DataEntity } from './entity';
+import { OneOrMany } from '@satyrnidae/apdb-utils';
 
 /**
  * Basic model of a data entity factory.
@@ -10,5 +11,5 @@ export interface IDataEntityFactory<T extends DataEntity> {
    * @param save Optional argument, specifies whether or not new objects should be auto-saved.
    * @returns A promise which resolves to an instance of the data entity type.
    */
-  load(args: Partial<T>, save?: boolean): Promise<T>;
+  load(args: Partial<T>, save?: boolean): Promise<OneOrMany<T>>;
 }
