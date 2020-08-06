@@ -1,5 +1,5 @@
-import { Repository } from 'typeorm';
-import { RepositoryTarget } from '@satyrnidae/apdb-utils';
+import { Repository, FindConditions } from 'typeorm';
+import { RepositoryTarget, OneOrMany } from '@satyrnidae/apdb-utils';
 import { DataEntity, IDataEntityFactory } from '../db';
 
 export type FactoryRegistry = {
@@ -19,5 +19,9 @@ export interface IDataService {
   registerFactory<T extends DataEntity>(entity: (new () => T), factory: (new () => IDataEntityFactory<T>)): Promise<void>;
 
   getFactory<T extends DataEntity>(entity: (new () => T)): Promise<IDataEntityFactory<T>>;
+
+  load<T extends DataEntity>(result: (new () => T), query: Partial<T>, save?: boolean): Promise<OneOrMany<T>>;
+
+  find<T extends DataEntity>(result: (new () => T), query: FindConditions<T>): Promise<OneOrMany<T>>;
 
 }

@@ -1,5 +1,6 @@
 import { DataEntity } from './entity';
 import { OneOrMany } from '@satyrnidae/apdb-utils';
+import { FindConditions, Repository } from 'typeorm';
 
 /**
  * Basic model of a data entity factory.
@@ -12,4 +13,8 @@ export interface IDataEntityFactory<T extends DataEntity> {
    * @returns A promise which resolves to an instance of the data entity type.
    */
   load(args: Partial<T>, save?: boolean): Promise<OneOrMany<T>>;
+
+  find(args: FindConditions<T>): Promise<OneOrMany<T>>;
+
+  getRepository(): Promise<Repository<T>>;
 }
