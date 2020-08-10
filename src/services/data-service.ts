@@ -3,7 +3,7 @@ import { RepositoryTarget, OneOrMany } from '@satyrnidae/apdb-utils';
 import { DataEntity, IDataEntityFactory } from '../db';
 
 export type FactoryRegistry = {
-  [name: string]: (new () => IDataEntityFactory<any>);
+  [name: string]: (new (...args: any[]) => IDataEntityFactory<any>);
 }
 
 /**
