@@ -27,7 +27,7 @@
   "homepage": "https://github.com/satyrnidae/apdb-api#readme",
   "dependencies": {},
   "peerDependencies": {
-    "@satyrnidae/apdb-utils": "^0.0.5",
+    "@satyrnidae/apdb-utils": "^0.0.6",
     "discord.js": "^11.5.1",
     "inversify": "^5.0.1",
     "inversify-inject-decorators": "^3.1.0",
