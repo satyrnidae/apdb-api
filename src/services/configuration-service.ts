@@ -36,4 +36,9 @@ export interface IConfigurationService {
    * Gets a single random emoji name from the list of random emoji names.
    */
   getRandomHeart(): Promise<string>;
+
+  /**
+   * Gets a list of directories to scan for modules
+   */
+  getModuleDirectories(): Promise<string[]>;
 }
