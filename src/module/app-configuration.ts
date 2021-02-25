@@ -32,5 +32,8 @@ export interface IAppConfiguration {
    */
   hearts: string[];
 
+  /**
+   * A list of directories which can contain plugins for the bot.
+   */
   moduleDirectories: string[];
 }
