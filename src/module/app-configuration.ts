@@ -31,4 +31,6 @@ export interface IAppConfiguration {
    * A list of all the default randomized emoji that this bot instance should use.
    */
   hearts: string[];
+
+  moduleDirectories: string[];
 }
