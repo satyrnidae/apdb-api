@@ -1,6 +1,6 @@
 {
   "name": "@satyrnidae/apdb-api",
-  "version": "2.9.1",
+  "version": "2.10.0",
   "description": "API layer for the 'Another Pluggable Discord Bot' project",
   "main": "dist/index.js",
   "scripts": {
