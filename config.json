@@ -1,0 +1,30 @@
+{
+  "token": "",
+  "defaultPrefix": "!",
+  "defaultNickname": "",
+  "showWelcomeMessage": true,
+  "loggingVerbosity": "INFO",
+  "moduleDirectories": [
+    "node_modules",
+    "apdb_plugins"
+  ],
+  "hearts": [
+    "heart",
+    "yellow_heart",
+    "green_heart",
+    "blue_heart",
+    "purple_heart",
+    "heart_exclamation",
+    "two_hearts",
+    "revolving_hearts",
+    "heartbeat",
+    "heartpulse",
+    "sparkling_heart",
+    "cupid",
+    "gift_heart",
+    "heart_decoration",
+    "hearts",
+    "black_heart"
+  ],
+  "botEmbedColor": "#7289da"
+}
