@@ -1,5 +1,6 @@
 import { EventHandler } from '../module';
 import { EventHandlerFunction } from '@satyrnidae/apdb-utils';
+import { ClientEvents } from 'discord.js';
 
 /**
  * A service which allows event handlers to be registered to the client.
@@ -23,5 +24,5 @@ export interface IEventService {
    * @param event The event to handle
    * @param listener The event handler function
    */
-  on(event: string, listener: Function): void;
+  on<K extends keyof ClientEvents>(event: K, listener: (...args: ClientEvents[K]) => void): void;
 }
