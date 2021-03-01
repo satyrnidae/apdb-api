@@ -1,3 +1,5 @@
+import { ColorResolvable } from "discord.js";
+
 /**
  * Models an application configuration file.
  */
@@ -36,4 +38,9 @@ export interface IAppConfiguration {
    * A list of directories which can contain plugins for the bot.
    */
   moduleDirectories: string[];
+
+  /**
+   * The default color of the bot's embeds.
+   */
+  botEmbedColor: ColorResolvable;
 }
