@@ -18,13 +18,13 @@ export interface ICommandService {
    * @param command The expected command string
    * @param moduleId Optionally, the specific module to pull the command from.
    */
-  get(command: string, moduleId?: string): Promise<OneOrMany<Command>>;
+  get(command: string, moduleId?: string, guild?: Guild): Promise<OneOrMany<Command>>;
 
   /**
    * Gets all the commands from the list, optionally filtering by module.
    * @param moduleId Optionally, the module ID by which to filter the commands.
    */
-  getAll(moduleId?: string): Promise<OneOrMany<Command>>;
+  getAll(moduleId?: string, guild?: Guild): Promise<OneOrMany<Command>>;
 
   /**
    * Gets the prefix for a specific guild.
