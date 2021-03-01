@@ -27,7 +27,7 @@
   "homepage": "https://github.com/satyrnidae/apdb-api#readme",
   "dependencies": {},
   "peerDependencies": {
-    "@satyrnidae/apdb-utils": "^0.0.6",
+    "@satyrnidae/apdb-utils": "^0.0.7",
     "discord.js": "^11.5.1",
     "inversify": "^5.0.1",
     "inversify-inject-decorators": "^3.1.0",
@@ -42,7 +42,7 @@
     "@types/yargs-parser": "^13.1.0",
     "bufferutil": "^4.0.0",
     "check-dependencies": "^1.1.0",
-    "discord.js": "11.5.1",
+    "discord.js": "^12.5.1",
     "erlpack": "github:discordapp/erlpack",
     "inversify": "5.0.1",
     "inversify-inject-decorators": "3.1.0",
