@@ -1,4 +1,4 @@
-import { Repository, FindConditions } from 'typeorm';
+import { Repository, FindConditions, Connection } from 'typeorm';
 import { RepositoryTarget, OneOrMany } from '@satyrnidae/apdb-utils';
 import { DataEntity, IDataEntityFactory } from '../db';
 
@@ -10,6 +10,8 @@ export type FactoryRegistry = {
  * A service which provides access to the data source.
  */
 export interface IDataService {
+
+  getConnection(): Promise<Connection>;
   /**
    * Gets a new repository instance for a specific target.
    * @param target The target for which the repository is resolved.
