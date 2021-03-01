@@ -1,6 +1,7 @@
 const APDB_MODULE: unique symbol = Symbol('apdb-module');
 
 export interface IModulePackage {
+  name: string;
   dependencies: any;
   peerDependencies: any;
   optionalDependencies: any;
@@ -11,7 +12,6 @@ export interface IModulePackage {
   main: string,
   description: string,
   homepage: string,
-
   version: string
 }
 
