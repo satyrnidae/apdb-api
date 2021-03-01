@@ -1,4 +1,4 @@
-import { ColorResolvable } from "discord.js";
+import { ColorResolvable, Guild } from "discord.js";
 
 /**
  * A service which provides access to the main configuration settings.
@@ -44,5 +44,5 @@ export interface IConfigurationService {
    */
   getModuleDirectories(): Promise<string[]>;
 
-  getBotEmbedColor(): Promise<ColorResolvable>;
+  getBotEmbedColor(guild?: Guild): Promise<ColorResolvable>;
 }
