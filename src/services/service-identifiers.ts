@@ -35,7 +35,12 @@ const ServiceIdentifiers = {
   /**
    * Symbol for the module service
    */
-  Module: Symbol.for('apdb-api/module-service')
+  Module: Symbol.for('apdb-api/module-service'),
+
+  /**
+   * Symbol for the message service
+   */
+  Message: Symbol.for('apdb-api/message-service')
 };
 
 export { ServiceIdentifiers };
