@@ -1,4 +1,5 @@
-import { ColorResolvable } from "discord.js";
+import { LogLevel, OneOrMany } from "@satyrnidae/apdb-utils";
+import { ColorResolvable, EmojiResolvable } from "discord.js";
 
 /**
  * Models an application configuration file.
@@ -25,6 +26,11 @@ export interface IAppConfiguration {
   showWelcomeMessage: boolean;
 
   /**
+   * The level at which the logger should print information.
+   */
+  logLevel: keyof typeof LogLevel;
+
+  /**
    * Whether or not the bot should be launched in developer mode, enabling more verbose logging.
    */
   developerMode: boolean;
@@ -32,15 +38,15 @@ export interface IAppConfiguration {
   /**
    * A list of all the default randomized emoji that this bot instance should use.
    */
-  hearts: string[];
+  hearts: OneOrMany<EmojiResolvable>;
 
   /**
    * A list of directories which can contain plugins for the bot.
    */
-  moduleDirectories: string[];
+  moduleDirectories: OneOrMany<string>;
 
   /**
    * The default color of the bot's embeds.
    */
-  botEmbedColor: ColorResolvable;
+  embedColor: ColorResolvable;
 }
