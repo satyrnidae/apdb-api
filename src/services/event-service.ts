@@ -10,7 +10,7 @@ export interface IEventService {
    * Registers a new event handler to the client instance.
    * @param event The event handler to register.
    */
-  registerEvent(event: EventHandler): void;
+  registerEvent<E extends keyof ClientEvents>(event: EventHandler<E>): void;
 
   /**
    * Adds a new listener function to the client instance
@@ -24,5 +24,5 @@ export interface IEventService {
    * @param event The event to handle
    * @param listener The event handler function
    */
-  on<K extends keyof ClientEvents>(event: K, listener: (...args: ClientEvents[K]) => void): void;
+  on<E extends keyof ClientEvents>(event: E, listener: (...args: ClientEvents[E]) => void): void;
 }
