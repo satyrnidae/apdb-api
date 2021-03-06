@@ -1,23 +1,20 @@
 import { LogLevel } from '@satyrnidae/apdb-utils';
 
-export class Logger {
-  constructor(private identifier: string,
-              private logLevel: LogLevel = "info") { }
+const DATE_FORMAT = new Intl.DateTimeFormat('en');
 
-  static logLevelValue(level: LogLevel): number {
-    return  level === "trace" ? 0 :
-            level === "debug" ? 1 :
-            level === "info"  ? 2 :
-            level === "warn"  ? 3 :
-            level === "error" ? 4 :
-                               -1;
-  }
+/**
+ * Logging utility class which formats and writes to the output.
+ */
+export class Logger {
+
+  constructor(private identifier: string,
+              private logLevel: keyof typeof LogLevel = "info") { }
 
   public getId(): string {
     return this.identifier;
   }
 
-  public setLogLevel(logLevel: LogLevel): void {
+  public setLogLevel(logLevel: keyof typeof LogLevel): void {
     this.logLevel = logLevel;
   }
 
@@ -41,13 +38,18 @@ export class Logger {
     this.write("trace", ...data);
   }
 
-  private write(level: LogLevel, ...data: any[]): void {
+  private write(level: keyof typeof LogLevel, ...data: any[]): void {
     if (this.shouldLog(level)) {
-      console[level](`[${this.identifier}] [${level.toUpperCase()}] ${data}`);
+      console.log(`[${new Date().toISOString()}] [${level.toUpperCase()}] [${this.identifier}] ${data}`);
+
+      if (level === 'trace') {
+        const stack: string = new Error().stack;
+        console.log(`${stack}`);
+      }
     }
   }
 
-  private shouldLog(level: LogLevel): boolean {
-    return Logger.logLevelValue(this.logLevel) <= Logger.logLevelValue(level);
+  private shouldLog(level: keyof typeof LogLevel): boolean {
+    return LogLevel[this.logLevel] <= LogLevel[level];
   }
 }
