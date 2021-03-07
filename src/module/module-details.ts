@@ -1,3 +1,5 @@
+import { OneOrMany } from "@satyrnidae/apdb-utils";
+
 /**
  * Represents detailed module information.
  */
@@ -15,7 +17,7 @@ export interface IModuleDetails {
   /**
    * The authors involved in the creation of this module.
    */
-  authors: string[];
+  authors: OneOrMany<string>;
 
   /**
    * The module description.
