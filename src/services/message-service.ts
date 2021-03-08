@@ -10,5 +10,5 @@ export interface IMessageService {
 
   delete(message: Message): Promise<Message>;
 
-  replyWithPaginatedEmbed(embeds: MessageEmbed[], message: Message, page: number): Promise<void>;
+  replyWithPaginatedEmbed(embeds: MessageEmbed[], message: Message, content?: MessageContentResolvable, page?: number): Promise<void>;
 }
