@@ -17,7 +17,7 @@ export interface IModuleDetails {
   /**
    * The authors involved in the creation of this module.
    */
-  authors: OneOrMany<string>;
+  authors?: OneOrMany<string>;
 
   /**
    * The module description.
@@ -27,12 +27,25 @@ export interface IModuleDetails {
   /**
    * The website for the module.
    */
-  website: string;
+  website?: string;
 
   /**
    * Full file path of the module
    */
-  path: string;
+  path?: string;
 
+  /**
+   * Name of the container which the module was loaded from.
+   */
   containerName: string;
+
+  /**
+   * URL of an image to use as the thumbnail.
+   */
+  thumbnail?: string,
+
+  /**
+   * Donation URLs
+   */
+  donate?: OneOrMany<string>
 }
