@@ -1,4 +1,5 @@
-import { Message } from 'discord.js';
+import { OneOrMany } from '@satyrnidae/apdb-utils';
+import { Message, PermissionResolvable } from 'discord.js';
 import { Options, Arguments } from 'yargs-parser';
 
 /**
@@ -7,44 +8,57 @@ import { Options, Arguments } from 'yargs-parser';
 export abstract class Command {
   /**
    * The input that the user must match to run the command.
-   * */
-  readonly abstract command: string;
+   */
+  public readonly abstract command: string;
 
   /**
    * The friendly, translated name of the command.
    */
-  readonly abstract friendlyName: string;
+  public readonly abstract friendlyName: string;
 
   /**
    * The command usage examples.
    */
-  readonly abstract syntax: string[];
+  public readonly abstract syntax: OneOrMany<string>;
 
   /**
-   * The command description.
+   * The short command description.
    */
-  readonly abstract description: string;
+  public readonly abstract description: string;
+
+  /**
+   * A longer command description shown in the command help card.
+   */
+  public readonly longDescription: string;
 
   /**
    * The command argument parser options.
    */
-  readonly abstract options: Options;
+  public readonly abstract options: Options;
+
+  /**
+   * Permissions required to execute the command.
+   */
+  public readonly permissions: PermissionResolvable = [];
 
   /**
    * @param moduleId The ID of the module to which this command belongs.
    */
-  constructor(public readonly moduleId: string) { }
+  public constructor(public readonly moduleId: string) { }
 
   /**
    * Executes the command functionality.
    * @param message The reference to the message which called this command.
    * @param args The parsed arguments contained in that message.
    */
-  abstract run(message: Message, args: Arguments): Promise<void>;
+  public abstract run(message: Message, args: Arguments): Promise<void>;
 
   /**
    * Checks if the command can be executed based on the message which called it.
+   * By default this checks the values in the permissions field, and allows admin / owner override.
    * @param message The message which triggered the command execution.
    */
-  abstract checkPermissions(message: Message): Promise<boolean>;
+  public async checkPermissions(message: Message): Promise<boolean> {
+    return !this.permissions || !message.member || message.member.hasPermission(this.permissions, { checkAdmin: true, checkOwner: true });
+  }
 }
