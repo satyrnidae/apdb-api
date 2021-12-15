@@ -59,6 +59,6 @@ export abstract class Command {
    * @param message The message which triggered the command execution.
    */
   public async checkPermissions(message: Message): Promise<boolean> {
-    return !this.permissions || !message.member || message.member.hasPermission(this.permissions, { checkAdmin: true, checkOwner: true });
+    return !this.permissions || !message.member || message.member.permissions.has(this.permissions, true);
   }
 }

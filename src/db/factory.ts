@@ -1,6 +1,6 @@
 import { DataEntity } from './entity';
 import { OneOrMany } from '@satyrnidae/apdb-utils';
-import { FindConditions, Repository } from 'typeorm';
+import { Repository } from 'typeorm';
 
 /**
  * Basic model of a data entity factory.

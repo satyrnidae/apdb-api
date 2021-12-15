@@ -1,4 +1,5 @@
 import { OneOrMany } from "@satyrnidae/apdb-utils";
+import { PermissionResolvable } from "discord.js";
 
 const APDB_MODULE: unique symbol = Symbol('apdb-module');
 
@@ -37,4 +38,5 @@ export interface IModulePackageDetails {
   id: string;
   thumbnail?: string;
   dependsOn: string[];
+  permissions: PermissionResolvable;
 }

@@ -1,4 +1,5 @@
 import { OneOrMany } from "@satyrnidae/apdb-utils";
+import { PermissionResolvable } from "discord.js";
 
 /**
  * Represents detailed module information.
@@ -42,10 +43,15 @@ export interface IModuleDetails {
   /**
    * URL of an image to use as the thumbnail.
    */
-  thumbnail?: string,
+  thumbnail?: string;
 
   /**
    * Donation URLs
    */
-  donate?: OneOrMany<string>
+  donate?: OneOrMany<string>;
+
+  /**
+   * The permissions required to use this module
+   */
+  permissions: PermissionResolvable
 }
