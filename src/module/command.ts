@@ -1,10 +1,12 @@
 import { OneOrMany } from '@satyrnidae/apdb-utils';
 import { Message, PermissionResolvable } from 'discord.js';
+import { injectable } from 'inversify';
 import { Options, Arguments } from 'yargs-parser';
 
 /**
  * The base class for a Command instance.
  */
+@injectable()
 export abstract class Command {
   /**
    * The input that the user must match to run the command.

@@ -1,8 +1,10 @@
 import { ClientEvents } from "discord.js";
+import { injectable } from "inversify";
 
 /**
  * The base class for an event handler instance.
  */
+@injectable()
 export abstract class EventHandler<E extends keyof ClientEvents> {
 
   /**

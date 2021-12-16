@@ -1,8 +1,10 @@
+import { injectable } from 'inversify';
 import { CreateDateColumn, UpdateDateColumn, Repository } from 'typeorm';
 
 /**
  * The base data entity type with audit data.
  */
+@injectable()
 export abstract class DataEntity {
 
   /**
