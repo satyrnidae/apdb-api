@@ -2,6 +2,11 @@ import { Guild } from 'discord.js';
 import { Command } from '../module';
 import { OneOrMany } from '@satyrnidae/apdb-utils';
 
+
+export interface GetCommandOptions {
+  moduleId?: string,
+  guild?: Guild;
+}
 /**
  * A service which maintains references to all registered commands.
  */
@@ -18,13 +23,13 @@ export interface ICommandService {
    * @param command The expected command string
    * @param moduleId Optionally, the specific module to pull the command from.
    */
-  get(command: string, moduleId?: string, guild?: Guild): Promise<OneOrMany<Command>>;
+  get(command: string, options?: GetCommandOptions): Promise<OneOrMany<Command>>;
 
   /**
    * Gets all the commands from the list, optionally filtering by module.
    * @param moduleId Optionally, the module ID by which to filter the commands.
    */
-  getAll(moduleId?: string, guild?: Guild): Promise<OneOrMany<Command>>;
+  getAll(options?: GetCommandOptions): Promise<OneOrMany<Command>>;
 
   /**
    * Gets the prefix for a specific guild.
