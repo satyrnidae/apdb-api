@@ -1,20 +1,9 @@
-import { injectable } from 'inversify';
-import { CreateDateColumn, UpdateDateColumn, Repository } from 'typeorm';
+import { CreateDateColumn, UpdateDateColumn } from 'typeorm';
 
 /**
  * The base data entity type with audit data.
  */
-@injectable()
-export abstract class DataEntity {
-
-  /**
-   * Saves the data entity to the data source.
-   * @returns The saved object
-   */
-  public abstract save(): Promise<this & DataEntity>;
-
-  protected abstract getRepository(): Promise<Repository<DataEntity>>;
-
+export abstract class Entity {
   /**
    * The date at which the entity was initially created in the data source.
    */

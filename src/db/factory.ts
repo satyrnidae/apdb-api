@@ -1,11 +1,10 @@
-import { DataEntity } from './entity';
+import { Entity } from './entity';
 import { OneOrMany } from '@satyrnidae/apdb-utils';
-import { Repository } from 'typeorm';
 
 /**
  * Basic model of a data entity factory.
  */
-export interface IDataEntityFactory<T extends DataEntity> {
+export interface IFactory<T extends Entity> {
   /**
    * Loads the data entity from the data source using the provided arguments.
    * @param args The arguments to query the database, as a partial of the data entity
@@ -14,5 +13,10 @@ export interface IDataEntityFactory<T extends DataEntity> {
    */
   load(args: Partial<T>, save?: boolean): Promise<OneOrMany<T>>;
 
-  getRepository(): Promise<Repository<T>>;
+  /**
+   * Creates a new instance of the data entity using the provided arguments.
+   * @param args
+   * @param save
+   */
+  create(item: Omit<T, 'createDate' | 'updateDate'>, save?: boolean): Promise<T>;
 }
